@@ -14,17 +14,20 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             VStack{
                 TitleWallifyView()
-                HStack{
-                    ScrollView(.horizontal){
-                        Text("All")
-                            .font(.title3)
-                            .fontWeight(.light)
-                        Text("For You")
-                            .font(.title3)
-                            .fontWeight(.light)
+                ScrollView(.horizontal, showsIndicators: false){
+                    HStack{
+                        Button(action:{}){
+                            Text("All")
+                                .font(.title3)
+                                .fontWeight(.light)
+                                .foregroundStyle(Color.black)
+
+                        }
+                        CategoryButton()
                     }
                     
                 }
+                
                 .padding()
                 Spacer()
                 
@@ -51,6 +54,17 @@ struct TitleWallifyView: View {
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
             }
             .padding()
+        }
+    }
+}
+
+struct CategoryButton: View {
+    var body: some View {
+        Button(action:{}){
+            Text("For You")
+                .font(.title3)
+                .fontWeight(.light)
+                .foregroundStyle(Color.black)
         }
     }
 }
