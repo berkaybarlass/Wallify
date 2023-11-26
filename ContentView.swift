@@ -9,16 +9,48 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello!")
+        ZStack{
+            Color.white
+                .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            VStack{
+                TitleWallifyView()
+                HStack{
+                    ScrollView(.horizontal){
+                        Text("All")
+                            .font(.title3)
+                            .fontWeight(.light)
+                        Text("For You")
+                            .font(.title3)
+                            .fontWeight(.light)
+                    }
+                    
+                }
+                .padding()
+                Spacer()
+                
+            }
+            
         }
-        .padding()
+        
     }
+    
+    
 }
 
 #Preview {
     ContentView()
+}
+
+
+struct TitleWallifyView: View {
+    var body: some View {
+        VStack {
+            HStack{
+                Text("Abstract Walls")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+            }
+            .padding()
+        }
+    }
 }
