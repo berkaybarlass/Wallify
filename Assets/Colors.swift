@@ -28,8 +28,8 @@ extension Color {
 struct Colors {
     
     static let seaBlue = Color(hex: "#006994")
-    static let firstBg = Color(hex: "#f7fcff")
-    static let cardBG = Color(hex: "#e3eeff")
+    static let primaryBgColor = Color(hex: "#f7fcff")
+    static let smallWpCardBg = Color(hex: "#e3eeff")
     
     
 }
